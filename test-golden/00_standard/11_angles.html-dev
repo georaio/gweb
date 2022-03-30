@@ -1,0 +1,23 @@
+<html><head><title>Tricky Angles</title></head>
+<body>
+<div id="src-0" class="literate">
+<div class="header">
+<span class="pred">&lt;&lt;</span><span class="succ">&gt;&gt;</span><span class="title">hello</span>
+ | <span class="inclusions"><a href="#src-1" title="main:1">main</a></span>
+</div>
+<div class="src">
+printf("Hello, &lt;&lt;&gt;&gt; %s!\n", "World")
+</div>
+</div>
+<div id="src-1" class="literate">
+<div class="header">
+<span class="pred">&lt;&lt;</span><span class="succ">&gt;&gt;</span><span class="title">main</span>
+</div>
+<div class="src">
+int main(void) {
+    5 &lt;&lt; 30 ? &lt;&lt;<a href="#src-0">hello</a>&gt;&gt; : 2 &gt;&gt; 10;
+}
+</div>
+</div>
+</body>
+</html>

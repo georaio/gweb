@@ -1,0 +1,167 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "title" , MetaInlines [ Str "Gnuplot" , Space , Str "error" ] )
+          ]
+    }
+  [ Header
+      1 ( "gnuplot" , [] , [] ) [ Str "1" , Space , Str "Gnuplot" ]
+  , Para
+      [ Str "We"
+      , Space
+      , Str "try"
+      , Space
+      , Str "out"
+      , Space
+      , Str "the"
+      , Space
+      , Str "Gnuplot"
+      , Space
+      , Str "integration"
+      , Space
+      , Str "when"
+      , Space
+      , Str "things"
+      , Space
+      , Str "go"
+      , Space
+      , Str "wrong\8230"
+      ]
+  , Header
+      2
+      ( "an-invalid-script-given-to-gnuplot" , [] , [] )
+      [ Str "1.1"
+      , Space
+      , Str "An"
+      , Space
+      , Str "invalid"
+      , Space
+      , Str "script"
+      , Space
+      , Str "given"
+      , Space
+      , Str "to"
+      , Space
+      , Str "gnuplot"
+      ]
+  , Div
+      ( "" , [] , [] )
+      [ CodeBlock
+          ( "" , [ "gnuplot" ] , [ ( "table" , "foo" ) ] )
+          "set xtic 1\nplott $foo using 1:2 with lines title \"foo\""
+      , CodeBlock
+          ( "" , [ "diagram-error" ] , [] )
+          "\ngnuplot> plott $foo using 1:2 with lines title \"foo\"\n         ^\n         line 6: invalid command\n\n"
+      ]
+  , Null
+  , Header
+      2
+      ( "an-invalid-data-table-reference-and-the-table-itself-fails-to-parse."
+      , []
+      , []
+      )
+      [ Str "1.2"
+      , Space
+      , Str "An"
+      , Space
+      , Str "invalid"
+      , Space
+      , Str "data"
+      , Space
+      , Str "table"
+      , Space
+      , Str "reference,"
+      , Space
+      , Str "and"
+      , Space
+      , Str "the"
+      , Space
+      , Str "table"
+      , Space
+      , Str "itself"
+      , Space
+      , Str "fails"
+      , Space
+      , Str "to"
+      , Space
+      , Str "parse."
+      ]
+  , Div
+      ( "" , [ "gnuplot" ] , [ ( "table" , "broken" ) ] )
+      [ CodeBlock
+          ( "" , [] , [] )
+          "set xtic 1\nplott $broken using 1:2 with lines title \"broken\""
+      , Div
+          ( "" , [ "diagram-error" ] , [] )
+          [ OrderedList
+              ( 1 , DefaultStyle , DefaultDelim )
+              [ [ Plain [ Str "Referenced data table not found: \"broken\"" ] ] ]
+          ]
+      ]
+  , Div
+      ( "" , [ "hidden" ] , [ ( "data-table" , "borken" ) ] )
+      [ Table
+          ( "" , [] , [] )
+          (Caption Nothing [])
+          [ ( AlignCenter , ColWidthDefault )
+          , ( AlignCenter , ColWidthDefault )
+          ]
+          (TableHead
+             ( "" , [] , [] )
+             [ Row
+                 ( "" , [] , [] )
+                 [ Cell
+                     ( "" , [] , [] )
+                     AlignDefault
+                     (RowSpan 1)
+                     (ColSpan 1)
+                     [ Plain [ Str "X" ] ]
+                 , Cell
+                     ( "" , [] , [] )
+                     AlignDefault
+                     (RowSpan 1)
+                     (ColSpan 1)
+                     [ Plain [ Str "Y" ] ]
+                 ]
+             ])
+          [ TableBody
+              ( "" , [] , [] )
+              (RowHeadColumns 0)
+              []
+              [ Row
+                  ( "" , [] , [] )
+                  [ Cell
+                      ( "" , [] , [] )
+                      AlignDefault
+                      (RowSpan 1)
+                      (ColSpan 1)
+                      [ Plain [ Strong [ Str "foo" ] ] ]
+                  , Cell
+                      ( "" , [] , [] )
+                      AlignDefault
+                      (RowSpan 1)
+                      (ColSpan 1)
+                      [ Plain [ Emph [ Str "bar" ] ] ]
+                  ]
+              ]
+          ]
+          (TableFoot ( "" , [] , [] ) [])
+      , Div
+          ( "" , [ "diagram-error" ] , [] )
+          [ OrderedList
+              ( 1 , DefaultStyle , DefaultDelim )
+              [ [ Plain
+                    [ Str
+                        "Bad data table \"borken\": failed to parse plain text from [Plain [Strong [Str \"foo\"]]]"
+                    ]
+                ]
+              , [ Plain
+                    [ Str
+                        "Bad data table \"borken\": failed to parse plain text from [Plain [Emph [Str \"bar\"]]]"
+                    ]
+                ]
+              ]
+          ]
+      ]
+  ]

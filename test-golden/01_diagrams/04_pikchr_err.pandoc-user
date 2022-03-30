@@ -1,0 +1,40 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "title" , MetaInlines [ Str "PikChr" , Space , Str "error" ] )
+          ]
+    }
+  [ Header
+      1 ( "pikchr" , [] , [] ) [ Str "1" , Space , Str "PikChr" ]
+  , Para
+      [ Str "We"
+      , Space
+      , Str "try"
+      , Space
+      , Str "out"
+      , Space
+      , Str "the"
+      , Space
+      , Str "PikChr"
+      , Space
+      , Str "integration"
+      , Space
+      , Str "when"
+      , Space
+      , Str "things"
+      , Space
+      , Str "go"
+      , Space
+      , Str "wrong\8230"
+      ]
+  , Div
+      ( "" , [] , [] )
+      [ CodeBlock
+          ( "" , [ "pikchr" ] , [ ( "style" , "width: 20em" ) ] )
+          "A: box \"A\"\nBV_1: boxxx \"B\" with n at 0.25 below A.s\nBV_2: box \"C\""
+      , CodeBlock
+          ( "" , [ "diagram-error" ] , [] )
+          "/*    1 */  A: box \"A\"\n/*    2 */  BV_1: boxxx \"B\" with n at 0.25 below A.s\n                  ^^^^^\nERROR: no such variable\n\n"
+      ]
+  ]

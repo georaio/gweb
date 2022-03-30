@@ -1,0 +1,60 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "tangles"
+            , MetaList
+                [ MetaMap
+                    (fromList
+                       [ ( "language" , MetaInlines [ Str "cee" ] )
+                       , ( "name" , MetaInlines [ Str "main" ] )
+                       , ( "path" , MetaInlines [ Str "main.c" ] )
+                       ])
+                ]
+            )
+          , ( "title" , MetaInlines [ Str "Link" ] )
+          ]
+    }
+  [ Div
+      ( "src-0" , [ "literate" ] , [] )
+      [ Div
+          ( "" , [ "header" ] , [] )
+          [ Plain
+              [ Span ( "" , [ "pred" ] , [] ) [ Str "<<" ]
+              , Span ( "" , [ "succ" ] , [] ) [ Str ">>" ]
+              , Span ( "" , [ "title" ] , [] ) [ Str "main" ]
+              ]
+          ]
+      , Div
+          ( "" , [ "src" ] , [] )
+          [ Plain
+              [ Str "int main(void) {\n    "
+              , Str "<<"
+              , Link ( "" , [] , [] ) [ Str "body" ] ( "#src-1" , "" )
+              , Str ">>"
+              , Str "\n}"
+              ]
+          ]
+      ]
+  , Div
+      ( "src-1" , [ "literate" ] , [] )
+      [ Div
+          ( "" , [ "header" ] , [] )
+          [ Plain
+              [ Span ( "" , [ "pred" ] , [] ) [ Str "<<" ]
+              , Span ( "" , [ "succ" ] , [] ) [ Str ">>" ]
+              , Span ( "" , [ "title" ] , [] ) [ Str "body" ]
+              ]
+          , Plain
+              [ Str " | "
+              , Span
+                  ( "" , [ "inclusions" ] , [] )
+                  [ Link ( "" , [] , [] ) [ Str "main" ] ( "#src-0" , "main:0" ) ]
+              ]
+          ]
+      , Div
+          ( "" , [ "src" ] , [] )
+          [ Plain [ Str "printf(\"Hello, %s!\\n\", \"World\");\nreturn 0;" ]
+          ]
+      ]
+  ]

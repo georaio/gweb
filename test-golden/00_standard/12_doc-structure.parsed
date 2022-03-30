@@ -1,0 +1,155 @@
+title: Document Structure
+========
+[]
+========
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "generate-toc" , MetaBool True )
+          , ( "title"
+            , MetaInlines [ Str "Document" , Space , Str "Structure" ]
+            )
+          ]
+    }
+  [ Header 1 ( "foo" , [] , [] ) [ Str "Foo" ]
+  , Para
+      [ Str "This"
+      , Space
+      , Str "is"
+      , Space
+      , Str "the"
+      , Space
+      , Str "Foo"
+      , Space
+      , Str "chapter."
+      ]
+  , Header
+      2
+      ( "foo-the-first" , [] , [] )
+      [ Str "Foo" , Space , Str "the" , Space , Str "First" ]
+  , Para
+      [ Str "We"
+      , Space
+      , Str "discuss"
+      , Space
+      , Str "the"
+      , Space
+      , Str "first"
+      , Space
+      , Str "main"
+      , Space
+      , Str "aspect"
+      , Space
+      , Str "of"
+      , Space
+      , Str "Foo."
+      ]
+  , Header
+      2
+      ( "foo-the-second" , [] , [] )
+      [ Str "Foo" , Space , Str "the" , Space , Str "Second" ]
+  , Para
+      [ Str "We"
+      , Space
+      , Str "discuss"
+      , Space
+      , Str "the"
+      , Space
+      , Str "second"
+      , Space
+      , Str "main"
+      , Space
+      , Str "aspect"
+      , Space
+      , Str "of"
+      , Space
+      , Str "Foo."
+      ]
+  , Header 1 ( "bar" , [] , [] ) [ Str "Bar" ]
+  , Para
+      [ Str "Bar"
+      , Space
+      , Str "is"
+      , Space
+      , Str "a"
+      , Space
+      , Str "deep"
+      , Space
+      , Str "field"
+      , Space
+      , Str "and"
+      , Space
+      , Str "covers"
+      , Space
+      , Str "many"
+      , Space
+      , Str "related"
+      , Space
+      , Str "topics."
+      ]
+  , Div
+      ( "" , [ "review-remark" ] , [ ( "reviewer" , "bens" ) ] )
+      [ Para
+          [ Str "Some"
+          , Space
+          , Str "extra"
+          , Space
+          , Str "remarks"
+          , Space
+          , Str "on"
+          , Space
+          , Str "the"
+          , Space
+          , Str "current"
+          , Space
+          , Str "state"
+          , Space
+          , Str "of"
+          , Space
+          , Str "the"
+          , Space
+          , Str "document."
+          ]
+      ]
+  , Header
+      2
+      ( "introduction-to-bar" , [] , [] )
+      [ Str "Introduction" , Space , Str "to" , Space , Str "Bar" ]
+  , Header
+      3
+      ( "the-thermodynamics-of-glass-blowing-in-awkward-situations"
+      , []
+      , []
+      )
+      [ Str "The"
+      , Space
+      , Str "Thermodynamics"
+      , Space
+      , Str "of"
+      , Space
+      , Str "Glass"
+      , Space
+      , Str "Blowing"
+      , Space
+      , Str "in"
+      , Space
+      , Str "Awkward"
+      , Space
+      , Str "Situations"
+      ]
+  , Div
+      ( "" , [ "dev-only" ] , [] )
+      [ Para
+          [ Str "This"
+          , Space
+          , Str "is"
+          , Space
+          , Str "for"
+          , Space
+          , Str "developers"
+          , Space
+          , Str "only."
+          ]
+      ]
+  ]

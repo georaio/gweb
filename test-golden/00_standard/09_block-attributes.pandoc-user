@@ -1,0 +1,34 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "tangles"
+            , MetaList
+                [ MetaMap
+                    (fromList
+                       [ ( "language" , MetaInlines [ Str "cee" ] )
+                       , ( "name" , MetaInlines [ Str "main" ] )
+                       , ( "path" , MetaInlines [ Str "main.c" ] )
+                       ])
+                ]
+            )
+          , ( "title"
+            , MetaInlines [ Str "Block" , Space , Str "Attributes" ]
+            )
+          ]
+    }
+  [ Div
+      ( "src-0" , [ "literate" , "beta" ] , [] )
+      [ Div
+          ( "" , [ "header" ] , [] )
+          [ Plain
+              [ Span ( "" , [ "pred" ] , [] ) [ Str "<<" ]
+              , Span ( "" , [ "succ" ] , [] ) [ Str ">>" ]
+              , Span ( "" , [ "title" ] , [] ) [ Str "main" ]
+              ]
+          ]
+      , Div
+          ( "" , [ "src" ] , [] )
+          [ Plain [ Str "int main(void) {\n    return 0;\n}" ] ]
+      ]
+  ]

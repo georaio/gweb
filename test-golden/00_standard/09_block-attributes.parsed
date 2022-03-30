@@ -1,0 +1,41 @@
+title: Block Attributes
+========
+[ ( Tangle
+      { tangle'name = "main"
+      , tangle'path = "main.c"
+      , tangle'language = "cee"
+      }
+  , [ Literate
+        0
+        ( "main" , [ "beta" ] , [ ( "lang" , "cee" ) ] )
+        [ Code "int main(void) {\n    return 0;\n}" ]
+    ]
+  )
+]
+========
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "tangles"
+            , MetaList
+                [ MetaMap
+                    (fromList
+                       [ ( "language" , MetaInlines [ Str "cee" ] )
+                       , ( "name" , MetaInlines [ Str "main" ] )
+                       , ( "path" , MetaInlines [ Str "main.c" ] )
+                       ])
+                ]
+            )
+          , ( "title"
+            , MetaInlines [ Str "Block" , Space , Str "Attributes" ]
+            )
+          ]
+    }
+  [ CodeBlock
+      ( "main"
+      , [ "beta" ]
+      , [ ( "lang" , "cee" ) , ( "literate-id" , "0" ) ]
+      )
+      "int main(void) {\n    return 0;\n}"
+  ]

@@ -1,0 +1,39 @@
+title: GraphViz error
+========
+[]
+========
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "title"
+            , MetaInlines [ Str "GraphViz" , Space , Str "error" ]
+            )
+          ]
+    }
+  [ Header 1 ( "graphviz" , [] , [] ) [ Str "GraphViz" ]
+  , Para
+      [ Str "We"
+      , Space
+      , Str "try"
+      , Space
+      , Str "out"
+      , Space
+      , Str "the"
+      , Space
+      , Str "GraphViz"
+      , Space
+      , Str "integration"
+      , Space
+      , Str "when"
+      , Space
+      , Str "things"
+      , Space
+      , Str "go"
+      , Space
+      , Str "wrong\8230"
+      ]
+  , CodeBlock
+      ( "" , [ "dot" ] , [ ( "style" , "width: 20em" ) ] )
+      "digrap {\n  D -> B\n  E -> B\n}"
+  ]

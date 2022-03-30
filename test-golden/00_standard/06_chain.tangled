@@ -1,0 +1,4 @@
+=== main.c [main/cee] ===
+int main(void) {
+    return 0;
+}

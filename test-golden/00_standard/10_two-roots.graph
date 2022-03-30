@@ -1,0 +1,9 @@
+digraph G {
+  u0 [label="main"];
+  u1 [label="func"];
+  u2 [label="hello"];
+  u3 [label="hello"];
+  u0 -> u2 [label="Link"];
+  u1 -> u2 [label="Link"];
+  u2 -> u3 [label="Next"];
+}

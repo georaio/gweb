@@ -1,0 +1,4 @@
+=== main.c [main/cee] ===
+int main(void) {
+    5 << 30 ? printf("Hello, <<>> %s!\n", "World") : 2 >> 10;
+}

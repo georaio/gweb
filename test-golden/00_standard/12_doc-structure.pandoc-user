@@ -1,0 +1,193 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "generate-toc" , MetaBool True )
+          , ( "title"
+            , MetaInlines [ Str "Document" , Space , Str "Structure" ]
+            )
+          ]
+    }
+  [ Div
+      ( "table-of-contents" , [] , [] )
+      [ BulletList
+          [ [ Plain
+                [ Link
+                    ( "" , [] , [] )
+                    [ Span
+                        ( "" , [ "section" ] , [ ( "toc-level" , "1" ) ] )
+                        [ Str "1" , Space , Str "Foo" ]
+                    ]
+                    ( "#foo" , "" )
+                ]
+            ]
+          , [ Plain
+                [ Link
+                    ( "" , [] , [] )
+                    [ Span
+                        ( "" , [ "section" ] , [ ( "toc-level" , "2" ) ] )
+                        [ Str "1.1" , Space , Str "Foo the First" ]
+                    ]
+                    ( "#foo-the-first" , "" )
+                ]
+            ]
+          , [ Plain
+                [ Link
+                    ( "" , [] , [] )
+                    [ Span
+                        ( "" , [ "section" ] , [ ( "toc-level" , "2" ) ] )
+                        [ Str "1.2" , Space , Str "Foo the Second" ]
+                    ]
+                    ( "#foo-the-second" , "" )
+                ]
+            ]
+          , [ Plain
+                [ Link
+                    ( "" , [] , [] )
+                    [ Span
+                        ( "" , [ "section" ] , [ ( "toc-level" , "1" ) ] )
+                        [ Str "2" , Space , Str "Bar" ]
+                    ]
+                    ( "#bar" , "" )
+                ]
+            ]
+          , [ Plain
+                [ Link
+                    ( "" , [] , [] )
+                    [ Span
+                        ( "" , [ "section" ] , [ ( "toc-level" , "2" ) ] )
+                        [ Str "2.1" , Space , Str "Introduction to Bar" ]
+                    ]
+                    ( "#introduction-to-bar" , "" )
+                ]
+            ]
+          ]
+      ]
+  , Header 1 ( "foo" , [] , [] ) [ Str "1" , Space , Str "Foo" ]
+  , Para
+      [ Str "This"
+      , Space
+      , Str "is"
+      , Space
+      , Str "the"
+      , Space
+      , Str "Foo"
+      , Space
+      , Str "chapter."
+      ]
+  , Header
+      2
+      ( "foo-the-first" , [] , [] )
+      [ Str "1.1"
+      , Space
+      , Str "Foo"
+      , Space
+      , Str "the"
+      , Space
+      , Str "First"
+      ]
+  , Para
+      [ Str "We"
+      , Space
+      , Str "discuss"
+      , Space
+      , Str "the"
+      , Space
+      , Str "first"
+      , Space
+      , Str "main"
+      , Space
+      , Str "aspect"
+      , Space
+      , Str "of"
+      , Space
+      , Str "Foo."
+      ]
+  , Header
+      2
+      ( "foo-the-second" , [] , [] )
+      [ Str "1.2"
+      , Space
+      , Str "Foo"
+      , Space
+      , Str "the"
+      , Space
+      , Str "Second"
+      ]
+  , Para
+      [ Str "We"
+      , Space
+      , Str "discuss"
+      , Space
+      , Str "the"
+      , Space
+      , Str "second"
+      , Space
+      , Str "main"
+      , Space
+      , Str "aspect"
+      , Space
+      , Str "of"
+      , Space
+      , Str "Foo."
+      ]
+  , Header 1 ( "bar" , [] , [] ) [ Str "2" , Space , Str "Bar" ]
+  , Para
+      [ Str "Bar"
+      , Space
+      , Str "is"
+      , Space
+      , Str "a"
+      , Space
+      , Str "deep"
+      , Space
+      , Str "field"
+      , Space
+      , Str "and"
+      , Space
+      , Str "covers"
+      , Space
+      , Str "many"
+      , Space
+      , Str "related"
+      , Space
+      , Str "topics."
+      ]
+  , Plain []
+  , Header
+      2
+      ( "introduction-to-bar" , [] , [] )
+      [ Str "2.1"
+      , Space
+      , Str "Introduction"
+      , Space
+      , Str "to"
+      , Space
+      , Str "Bar"
+      ]
+  , Header
+      3
+      ( "the-thermodynamics-of-glass-blowing-in-awkward-situations"
+      , []
+      , []
+      )
+      [ Str "2.1.1"
+      , Space
+      , Str "The"
+      , Space
+      , Str "Thermodynamics"
+      , Space
+      , Str "of"
+      , Space
+      , Str "Glass"
+      , Space
+      , Str "Blowing"
+      , Space
+      , Str "in"
+      , Space
+      , Str "Awkward"
+      , Space
+      , Str "Situations"
+      ]
+  , Plain []
+  ]

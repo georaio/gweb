@@ -1,0 +1,14 @@
+title: Nonempty Block
+========
+[]
+========
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "title"
+            , MetaInlines [ Str "Nonempty" , Space , Str "Block" ]
+            )
+          ]
+    }
+  [ CodeBlock ( "" , [] , [] ) "main = pure ()" ]

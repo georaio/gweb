@@ -1,0 +1,49 @@
+<html><head><title>Gnuplot error</title></head>
+<body>
+<h1 id="gnuplot">1 Gnuplot</h1>
+<p>We try out the Gnuplot integration when things go wrong…</p>
+<h2 id="an-invalid-script-given-to-gnuplot">1.1 An invalid script given to gnuplot</h2>
+<div>
+<pre class="gnuplot" table="foo"><code>set xtic 1
+plott $foo using 1:2 with lines title &quot;foo&quot;</code></pre>
+<pre class="diagram-error"><code>
+gnuplot&gt; plott $foo using 1:2 with lines title &quot;foo&quot;
+         ^
+         line 6: invalid command
+
+</code></pre>
+</div>
+<h2 id="an-invalid-data-table-reference-and-the-table-itself-fails-to-parse.">1.2 An invalid data table reference, and the table itself fails to parse.</h2>
+<div class="gnuplot" table="broken">
+<pre><code>set xtic 1
+plott $broken using 1:2 with lines title &quot;broken&quot;</code></pre>
+<div class="diagram-error">
+<ol>
+<li>Referenced data table not found: "broken"</li>
+</ol>
+</div>
+</div>
+<div class="hidden" data-table="borken">
+<table>
+<thead>
+<tr class="header">
+<th align="center">X</th>
+<th align="center">Y</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>foo</strong></td>
+<td align="center"><em>bar</em></td>
+</tr>
+</tbody>
+</table>
+<div class="diagram-error">
+<ol>
+<li>Bad data table "borken": failed to parse plain text from [Plain [Strong [Str "foo"]]]</li>
+<li>Bad data table "borken": failed to parse plain text from [Plain [Emph [Str "bar"]]]</li>
+</ol>
+</div>
+</div>
+</body>
+</html>

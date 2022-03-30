@@ -1,0 +1,48 @@
+title: Link
+========
+[ ( Tangle
+      { tangle'name = "main"
+      , tangle'path = "main.c"
+      , tangle'language = "cee"
+      }
+  , [ Literate
+        0
+        ( "main" , [] , [] )
+        [ Code "int main(void) {\n    "
+        , Include
+            4
+            [ Literate
+                1
+                ( "body" , [] , [] )
+                [ Code "printf(\"Hello, %s!\\n\", \"World\");\nreturn 0;" ]
+            ]
+        , Code "\n}"
+        ]
+    ]
+  )
+]
+========
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "tangles"
+            , MetaList
+                [ MetaMap
+                    (fromList
+                       [ ( "language" , MetaInlines [ Str "cee" ] )
+                       , ( "name" , MetaInlines [ Str "main" ] )
+                       , ( "path" , MetaInlines [ Str "main.c" ] )
+                       ])
+                ]
+            )
+          , ( "title" , MetaInlines [ Str "Link" ] )
+          ]
+    }
+  [ CodeBlock
+      ( "main" , [] , [ ( "literate-id" , "0" ) ] )
+      "int main(void) {\n    <<body>>\n}"
+  , CodeBlock
+      ( "body" , [] , [ ( "literate-id" , "1" ) ] )
+      "printf(\"Hello, %s!\\n\", \"World\");\nreturn 0;"
+  ]

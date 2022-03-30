@@ -1,0 +1,48 @@
+title: Tricky Angles
+========
+[ ( Tangle
+      { tangle'name = "main"
+      , tangle'path = "main.c"
+      , tangle'language = "cee"
+      }
+  , [ Literate
+        1
+        ( "main" , [] , [] )
+        [ Code "int main(void) {\n    5 << 30 ? "
+        , Include
+            6
+            [ Literate
+                0
+                ( "hello" , [] , [] )
+                [ Code "printf(\"Hello, <<>> %s!\\n\", \"World\")" ]
+            ]
+        , Code " : 2 >> 10;\n}"
+        ]
+    ]
+  )
+]
+========
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "tangles"
+            , MetaList
+                [ MetaMap
+                    (fromList
+                       [ ( "language" , MetaInlines [ Str "cee" ] )
+                       , ( "name" , MetaInlines [ Str "main" ] )
+                       , ( "path" , MetaInlines [ Str "main.c" ] )
+                       ])
+                ]
+            )
+          , ( "title" , MetaInlines [ Str "Tricky" , Space , Str "Angles" ] )
+          ]
+    }
+  [ CodeBlock
+      ( "hello" , [] , [ ( "literate-id" , "0" ) ] )
+      "printf(\"Hello, <<>> %s!\\n\", \"World\")"
+  , CodeBlock
+      ( "main" , [] , [ ( "literate-id" , "1" ) ] )
+      "int main(void) {\n    5 << 30 ? <<hello>> : 2 >> 10;\n}"
+  ]

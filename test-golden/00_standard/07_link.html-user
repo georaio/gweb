@@ -1,0 +1,24 @@
+<html><head><title>Link</title></head>
+<body>
+<div id="src-0" class="literate">
+<div class="header">
+<span class="pred">&lt;&lt;</span><span class="succ">&gt;&gt;</span><span class="title">main</span>
+</div>
+<div class="src">
+int main(void) {
+    &lt;&lt;<a href="#src-1">body</a>&gt;&gt;
+}
+</div>
+</div>
+<div id="src-1" class="literate">
+<div class="header">
+<span class="pred">&lt;&lt;</span><span class="succ">&gt;&gt;</span><span class="title">body</span>
+ | <span class="inclusions"><a href="#src-0" title="main:0">main</a></span>
+</div>
+<div class="src">
+printf("Hello, %s!\n", "World");
+return 0;
+</div>
+</div>
+</body>
+</html>

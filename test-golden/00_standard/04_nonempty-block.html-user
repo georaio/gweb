@@ -1,0 +1,5 @@
+<html><head><title>Nonempty Block</title></head>
+<body>
+<pre><code>main = pure ()</code></pre>
+</body>
+</html>

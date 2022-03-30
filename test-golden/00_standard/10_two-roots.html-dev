@@ -1,0 +1,44 @@
+<html><head><title>Two Roots</title></head>
+<body>
+<div id="src-0" class="literate">
+<div class="header">
+<span class="pred">&lt;&lt;</span><span class="succ">&gt;&gt;</span><span class="title">main</span>
+</div>
+<div class="src">
+int main(void) {
+    &lt;&lt;<a href="#src-2">hello</a>&gt;&gt;
+}
+</div>
+</div>
+<div id="src-1" class="literate">
+<div class="header">
+<span class="pred">&lt;&lt;</span><span class="succ">&gt;&gt;</span><span class="title">func</span>
+</div>
+<div class="src">
+int func(void) {
+    if (0 &lt; 2) {
+        &lt;&lt;<a href="#src-2">hello</a>&gt;&gt;
+    }
+}
+</div>
+</div>
+<div id="src-2" class="literate">
+<div class="header">
+<span class="pred">&lt;&lt;</span><span class="succ"><a href="#src-3" title="hello:3">&gt;&gt;</a></span><span class="title">hello</span>
+ | <span class="inclusions"><a href="#src-0" title="main:0">main</a> <a href="#src-1" title="func:1">func</a></span>
+</div>
+<div class="src">
+printf("Hello, %s!\n", "World");
+</div>
+</div>
+<div id="src-3" class="literate">
+<div class="header">
+<span class="pred"><a href="#src-2" title="hello:2">&lt;&lt;</a></span><span class="succ">&gt;&gt;</span><span class="title">hello</span>
+ | <span class="inclusions"><a href="#src-0" title="main:0">main</a> <a href="#src-1" title="func:1">func</a></span>
+</div>
+<div class="src">
+return 0;
+</div>
+</div>
+</body>
+</html>

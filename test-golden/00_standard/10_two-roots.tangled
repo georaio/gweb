@@ -1,0 +1,12 @@
+=== func.c [func/cee] ===
+int func(void) {
+    if (0 < 2) {
+        printf("Hello, %s!\n", "World");
+        return 0;
+    }
+}
+=== main.c [main/cee] ===
+int main(void) {
+    printf("Hello, %s!\n", "World");
+    return 0;
+}

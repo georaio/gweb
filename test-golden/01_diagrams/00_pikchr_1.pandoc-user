@@ -1,0 +1,26 @@
+Pandoc
+  Meta
+    { unMeta = fromList [ ( "title" , MetaInlines [ Str "PikChr" ] ) ]
+    }
+  [ Header
+      1 ( "pikchr" , [] , [] ) [ Str "1" , Space , Str "PikChr" ]
+  , Para
+      [ Str "We"
+      , Space
+      , Str "try"
+      , Space
+      , Str "out"
+      , Space
+      , Str "the"
+      , Space
+      , Str "PikChr"
+      , Space
+      , Str "integration\8230"
+      ]
+  , Div
+      ( "" , [ "pikchr" ] , [ ( "style" , "width: 20em" ) ] )
+      [ RawBlock
+          (Format "html")
+          "<svg xmlns='http://www.w3.org/2000/svg' class=\"pikchr\" viewBox=\"0 0 205.92 184.32\">\n<path d=\"M2,38L52,38L52,2L2,2Z\"  style=\"fill:none;stroke-width:2.16;stroke:rgb(0,0,0);\" />\n<text x=\"27\" y=\"20\" text-anchor=\"middle\" fill=\"rgb(0,0,0)\" dominant-baseline=\"central\">A</text>\n<path d=\"M2,110L52,110L52,74L2,74Z\"  style=\"fill:none;stroke-width:2.16;stroke:rgb(0,0,0);\" />\n<text x=\"27\" y=\"92\" text-anchor=\"middle\" fill=\"rgb(0,0,0)\" dominant-baseline=\"central\">B</text>\n<path d=\"M52,110L102,110L102,74L52,74Z\"  style=\"fill:none;stroke-width:2.16;stroke:rgb(0,0,0);\" />\n<text x=\"77\" y=\"92\" text-anchor=\"middle\" fill=\"rgb(0,0,0)\" dominant-baseline=\"central\">C</text>\n<path d=\"M2,182L52,182L52,146L2,146Z\"  style=\"fill:none;stroke-width:2.16;stroke:rgb(0,0,0);\" />\n<text x=\"27\" y=\"164\" text-anchor=\"middle\" fill=\"rgb(0,0,0)\" dominant-baseline=\"central\">D</text>\n<path d=\"M52,182L102,182L102,146L52,146Z\"  style=\"fill:none;stroke-width:2.16;stroke:rgb(0,0,0);\" />\n<text x=\"77\" y=\"164\" text-anchor=\"middle\" fill=\"rgb(0,0,0)\" dominant-baseline=\"central\">E</text>\n<path d=\"M102,182L153,182L153,146L102,146Z\"  style=\"fill:none;stroke-width:2.16;stroke:rgb(0,0,0);\" />\n<text x=\"128\" y=\"164\" text-anchor=\"middle\" fill=\"rgb(0,0,0)\" dominant-baseline=\"central\">F</text>\n<path d=\"M153,182L203,182L203,146L153,146Z\"  style=\"fill:none;stroke-width:2.16;stroke:rgb(0,0,0);\" />\n<text x=\"178\" y=\"164\" text-anchor=\"middle\" fill=\"rgb(0,0,0)\" dominant-baseline=\"central\">G</text>\n</svg>\n\n"
+      ]
+  ]

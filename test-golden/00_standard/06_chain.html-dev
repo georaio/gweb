@@ -1,0 +1,21 @@
+<html><head><title>Chain</title></head>
+<body>
+<div id="src-0" class="literate">
+<div class="header">
+<span class="pred">&lt;&lt;</span><span class="succ"><a href="#src-1" title="main:1">&gt;&gt;</a></span><span class="title">main</span>
+</div>
+<div class="src">
+int main(void) {
+</div>
+</div>
+<div id="src-1" class="literate">
+<div class="header">
+<span class="pred"><a href="#src-0" title="main:0">&lt;&lt;</a></span><span class="succ">&gt;&gt;</span><span class="title">main</span>
+</div>
+<div class="src">
+    return 0;
+}
+</div>
+</div>
+</body>
+</html>

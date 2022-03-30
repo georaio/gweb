@@ -1,0 +1,29 @@
+title: Empty Root
+========
+[ ( Tangle
+      { tangle'name = "main"
+      , tangle'path = "main.c"
+      , tangle'language = "cee"
+      }
+  , [ Literate 0 ( "main" , [] , [] ) [] ]
+  )
+]
+========
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "tangles"
+            , MetaList
+                [ MetaMap
+                    (fromList
+                       [ ( "language" , MetaInlines [ Str "cee" ] )
+                       , ( "name" , MetaInlines [ Str "main" ] )
+                       , ( "path" , MetaInlines [ Str "main.c" ] )
+                       ])
+                ]
+            )
+          , ( "title" , MetaInlines [ Str "Empty" , Space , Str "Root" ] )
+          ]
+    }
+  [ CodeBlock ( "main" , [] , [ ( "literate-id" , "0" ) ] ) "" ]

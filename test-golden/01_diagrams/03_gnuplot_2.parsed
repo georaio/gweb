@@ -1,0 +1,49 @@
+title: Gnuplot External Data
+========
+[]
+========
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "title"
+            , MetaInlines
+                [ Str "Gnuplot" , Space , Str "External" , Space , Str "Data" ]
+            )
+          ]
+    }
+  [ Header 1 ( "gnuplot" , [] , [] ) [ Str "Gnuplot" ]
+  , Para
+      [ Str "We"
+      , Space
+      , Str "try"
+      , Space
+      , Str "out"
+      , Space
+      , Str "the"
+      , Space
+      , Str "Gnuplot"
+      , Space
+      , Str "integration"
+      , Space
+      , Str "using"
+      , Space
+      , Str "an"
+      , Space
+      , Str "external"
+      , Space
+      , Str "file"
+      , Space
+      , Str "data"
+      , Space
+      , Str "source\8230"
+      ]
+  , CodeBlock
+      ( ""
+      , [ "gnuplot" ]
+      , [ ( "file-foo" , "03_gnuplot_2.dat" )
+        , ( "style" , "width: 20em" )
+        ]
+      )
+      "set xtic 1\nplot foo using 1:2 with lines title \"foo\""
+  ]

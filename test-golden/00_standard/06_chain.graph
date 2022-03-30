@@ -1,0 +1,5 @@
+digraph G {
+  u0 [label="main"];
+  u1 [label="main"];
+  u0 -> u1 [label="Next"];
+}

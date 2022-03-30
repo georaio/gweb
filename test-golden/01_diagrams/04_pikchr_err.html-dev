@@ -1,0 +1,17 @@
+<html><head><title>PikChr error</title></head>
+<body>
+<h1 id="pikchr">1 PikChr</h1>
+<p>We try out the PikChr integration when things go wrong…</p>
+<div>
+<pre class="pikchr" style="width: 20em"><code>A: box &quot;A&quot;
+BV_1: boxxx &quot;B&quot; with n at 0.25 below A.s
+BV_2: box &quot;C&quot;</code></pre>
+<pre class="diagram-error"><code>/*    1 */  A: box &quot;A&quot;
+/*    2 */  BV_1: boxxx &quot;B&quot; with n at 0.25 below A.s
+                  ^^^^^
+ERROR: no such variable
+
+</code></pre>
+</div>
+</body>
+</html>

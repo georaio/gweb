@@ -1,0 +1,114 @@
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "tangles"
+            , MetaList
+                [ MetaMap
+                    (fromList
+                       [ ( "language" , MetaInlines [ Str "cee" ] )
+                       , ( "name" , MetaInlines [ Str "main" ] )
+                       , ( "path" , MetaInlines [ Str "main.c" ] )
+                       ])
+                , MetaMap
+                    (fromList
+                       [ ( "language" , MetaInlines [ Str "cee" ] )
+                       , ( "name" , MetaInlines [ Str "func" ] )
+                       , ( "path" , MetaInlines [ Str "func.c" ] )
+                       ])
+                ]
+            )
+          , ( "title" , MetaInlines [ Str "Two" , Space , Str "Roots" ] )
+          ]
+    }
+  [ Div
+      ( "src-0" , [ "literate" ] , [] )
+      [ Div
+          ( "" , [ "header" ] , [] )
+          [ Plain
+              [ Span ( "" , [ "pred" ] , [] ) [ Str "<<" ]
+              , Span ( "" , [ "succ" ] , [] ) [ Str ">>" ]
+              , Span ( "" , [ "title" ] , [] ) [ Str "main" ]
+              ]
+          ]
+      , Div
+          ( "" , [ "src" ] , [] )
+          [ Plain
+              [ Str "int main(void) {\n    "
+              , Str "<<"
+              , Link ( "" , [] , [] ) [ Str "hello" ] ( "#src-2" , "" )
+              , Str ">>"
+              , Str "\n}"
+              ]
+          ]
+      ]
+  , Div
+      ( "src-1" , [ "literate" ] , [] )
+      [ Div
+          ( "" , [ "header" ] , [] )
+          [ Plain
+              [ Span ( "" , [ "pred" ] , [] ) [ Str "<<" ]
+              , Span ( "" , [ "succ" ] , [] ) [ Str ">>" ]
+              , Span ( "" , [ "title" ] , [] ) [ Str "func" ]
+              ]
+          ]
+      , Div
+          ( "" , [ "src" ] , [] )
+          [ Plain
+              [ Str "int func(void) {\n    if (0 < 2) {\n        "
+              , Str "<<"
+              , Link ( "" , [] , [] ) [ Str "hello" ] ( "#src-2" , "" )
+              , Str ">>"
+              , Str "\n    }\n}"
+              ]
+          ]
+      ]
+  , Div
+      ( "src-2" , [ "literate" ] , [] )
+      [ Div
+          ( "" , [ "header" ] , [] )
+          [ Plain
+              [ Span ( "" , [ "pred" ] , [] ) [ Str "<<" ]
+              , Span
+                  ( "" , [ "succ" ] , [] )
+                  [ Link ( "" , [] , [] ) [ Str ">>" ] ( "#src-3" , "hello:3" ) ]
+              , Span ( "" , [ "title" ] , [] ) [ Str "hello" ]
+              ]
+          , Plain
+              [ Str " | "
+              , Span
+                  ( "" , [ "inclusions" ] , [] )
+                  [ Link ( "" , [] , [] ) [ Str "main" ] ( "#src-0" , "main:0" )
+                  , Space
+                  , Link ( "" , [] , [] ) [ Str "func" ] ( "#src-1" , "func:1" )
+                  ]
+              ]
+          ]
+      , Div
+          ( "" , [ "src" ] , [] )
+          [ Plain [ Str "printf(\"Hello, %s!\\n\", \"World\");" ] ]
+      ]
+  , Div
+      ( "src-3" , [ "literate" ] , [] )
+      [ Div
+          ( "" , [ "header" ] , [] )
+          [ Plain
+              [ Span
+                  ( "" , [ "pred" ] , [] )
+                  [ Link ( "" , [] , [] ) [ Str "<<" ] ( "#src-2" , "hello:2" ) ]
+              , Span ( "" , [ "succ" ] , [] ) [ Str ">>" ]
+              , Span ( "" , [ "title" ] , [] ) [ Str "hello" ]
+              ]
+          , Plain
+              [ Str " | "
+              , Span
+                  ( "" , [ "inclusions" ] , [] )
+                  [ Link ( "" , [] , [] ) [ Str "main" ] ( "#src-0" , "main:0" )
+                  , Space
+                  , Link ( "" , [] , [] ) [ Str "func" ] ( "#src-1" , "func:1" )
+                  ]
+              ]
+          ]
+      , Div ( "" , [ "src" ] , [] ) [ Plain [ Str "return 0;" ] ]
+      ]
+  ]

@@ -1,0 +1,26 @@
+title: PikChr
+========
+[]
+========
+Pandoc
+  Meta
+    { unMeta = fromList [ ( "title" , MetaInlines [ Str "PikChr" ] ) ]
+    }
+  [ Header 1 ( "pikchr" , [] , [] ) [ Str "PikChr" ]
+  , Para
+      [ Str "We"
+      , Space
+      , Str "try"
+      , Space
+      , Str "out"
+      , Space
+      , Str "the"
+      , Space
+      , Str "PikChr"
+      , Space
+      , Str "integration\8230"
+      ]
+  , CodeBlock
+      ( "" , [ "pikchr" ] , [ ( "style" , "width: 20em" ) ] )
+      "boxwid = 0.35; boxht = 0.25;\n\nA: box \"A\"\n\nBV_1: box \"B\" with n at 0.25 below A.s\nBV_2: box \"C\"\n\nCV_1: box \"D\" with n at 0.25 below BV_1.s\nCV_2: box \"E\"\nCV_3: box \"F\"\nCV_4: box \"G\""
+  ]

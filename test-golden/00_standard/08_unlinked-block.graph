@@ -1,0 +1,3 @@
+digraph G {
+  u0 [label="main"];
+}

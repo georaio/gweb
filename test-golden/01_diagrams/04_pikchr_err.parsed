@@ -1,0 +1,37 @@
+title: PikChr error
+========
+[]
+========
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "title" , MetaInlines [ Str "PikChr" , Space , Str "error" ] )
+          ]
+    }
+  [ Header 1 ( "pikchr" , [] , [] ) [ Str "PikChr" ]
+  , Para
+      [ Str "We"
+      , Space
+      , Str "try"
+      , Space
+      , Str "out"
+      , Space
+      , Str "the"
+      , Space
+      , Str "PikChr"
+      , Space
+      , Str "integration"
+      , Space
+      , Str "when"
+      , Space
+      , Str "things"
+      , Space
+      , Str "go"
+      , Space
+      , Str "wrong\8230"
+      ]
+  , CodeBlock
+      ( "" , [ "pikchr" ] , [ ( "style" , "width: 20em" ) ] )
+      "A: box \"A\"\nBV_1: boxxx \"B\" with n at 0.25 below A.s\nBV_2: box \"C\""
+  ]

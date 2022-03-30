@@ -1,0 +1,40 @@
+title: Unlinked Block
+========
+[ ( Tangle
+      { tangle'name = "main"
+      , tangle'path = "main.c"
+      , tangle'language = "cee"
+      }
+  , [ Literate
+        0
+        ( "main" , [] , [] )
+        [ Code "int main(void) {\n    return 0;\n}" ]
+    ]
+  )
+]
+========
+Pandoc
+  Meta
+    { unMeta =
+        fromList
+          [ ( "tangles"
+            , MetaList
+                [ MetaMap
+                    (fromList
+                       [ ( "language" , MetaInlines [ Str "cee" ] )
+                       , ( "name" , MetaInlines [ Str "main" ] )
+                       , ( "path" , MetaInlines [ Str "main.c" ] )
+                       ])
+                ]
+            )
+          , ( "title"
+            , MetaInlines [ Str "Unlinked" , Space , Str "Block" ]
+            )
+          ]
+    }
+  [ CodeBlock
+      ( "main" , [] , [ ( "literate-id" , "0" ) ] )
+      "int main(void) {\n    return 0;\n}"
+  , CodeBlock
+      ( "extra" , [] , [ ( "literate-id" , "1" ) ] ) "return 0;"
+  ]
