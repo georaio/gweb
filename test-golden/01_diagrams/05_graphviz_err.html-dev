@@ -1,6 +1,6 @@
 <html><head><title>GraphViz error</title></head>
 <body>
-<h1 id="graphviz">1 GraphViz</h1>
+<h1 id="graphviz"><span class="section-no">1</span> GraphViz</h1>
 <p>We try out the GraphViz integration when things go wrong…</p>
 <div>
 <div class="sourceCode" id="cb1" style="width: 20em"><pre class="sourceCode dot"><code class="sourceCode dot"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="va">digrap</span> <span class="ot">{</span></span>

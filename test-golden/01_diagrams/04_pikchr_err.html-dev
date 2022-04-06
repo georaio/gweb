@@ -1,6 +1,6 @@
 <html><head><title>PikChr error</title></head>
 <body>
-<h1 id="pikchr">1 PikChr</h1>
+<h1 id="pikchr"><span class="section-no">1</span> PikChr</h1>
 <p>We try out the PikChr integration when things go wrong…</p>
 <div>
 <pre class="pikchr" style="width: 20em"><code>A: box &quot;A&quot;

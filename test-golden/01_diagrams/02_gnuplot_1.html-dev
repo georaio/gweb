@@ -1,6 +1,6 @@
 <html><head><title>Gnuplot</title></head>
 <body>
-<h1 id="gnuplot">1 Gnuplot</h1>
+<h1 id="gnuplot"><span class="section-no">1</span> Gnuplot</h1>
 <p>We try out the Gnuplot integration…</p>
 <div class="gnuplot" table="foo" style="width: 20em">
 <?xml version='1.0' ?><svg width="600" height="480" viewBox="0 0 600 480" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

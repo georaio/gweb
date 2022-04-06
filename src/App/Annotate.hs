@@ -32,13 +32,13 @@ devDocs dir metadata gr doc = do
   let doc' = flip walk doc $ \case
         PD.Div (ident, cls, kv) body
           | "review-remark" `elem` cls ->
-            PD.Div
-              (ident, cls, kv)
-              ( [ PD.Div ("", ["reviewer"], []) [PD.Plain [PD.Str ("-- " <> r)]]
-                  | ("reviewer", r) <- kv
-                ]
-                  ++ body
-              )
+              PD.Div
+                (ident, cls, kv)
+                ( [ PD.Div ("", ["reviewer"], []) [PD.Plain [PD.Str ("-- " <> r)]]
+                    | ("reviewer", r) <- kv
+                  ]
+                    ++ body
+                )
         blk -> blk
   (docAnn, headers) <- runStateT (annotate' gr doc') initHeaders
   docToc <-
@@ -142,7 +142,7 @@ renderBodyHeader title = \case
     PD.Header
       (length path)
       (ident, [], [])
-      ( PD.Str (Text.intercalate "." $ map (Text.pack . show) path) :
+      ( PD.Span ("", ["section-no"], []) [PD.Str (Text.intercalate "." $ map (Text.pack . show) path)] :
         PD.Space :
         title
       )
@@ -159,30 +159,27 @@ renderBodyHeader title = \case
     where
       ts =
         Text.intercalate "." $
-          Text.singleton (['A' ..] List.!! (x -1)) : map (Text.pack . show) xs
+          Text.singleton (['A' ..] List.!! (x - 1)) : map (Text.pack . show) xs
 
 renderToCHeader :: Text -> Header Int -> PD.Inline
 renderToCHeader title = \case
   Section _ path ->
     PD.Span
       ("", ["section"], [("toc-level", Text.pack (show (length path)))])
-      [ PD.Str (Text.intercalate "." $ map (Text.pack . show) path),
-        PD.Space,
-        PD.Str title
+      [ PD.Span ("", ["toc-number"], []) [PD.Str (Text.intercalate "." $ map (Text.pack . show) path)],
+        PD.Span ("", ["toc-item"], []) [PD.Str title]
       ]
   Appendix _ [] -> PD.Str ""
   Appendix _ path@(x : xs) ->
     PD.Span
-      ("", ["appendix"], [("toc-level", Text.pack (show (length path)))])
-      [ PD.Str (if null xs then "Appendix " <> ts else ts),
-        PD.Str ":",
-        PD.Space,
-        PD.Str title
+      ("", ["appendix"], [("toc-level", if null xs then "Appendix " <> ts else ts)])
+      [ PD.Span ("", ["toc-number"], []) [PD.Str (Text.intercalate "." $ map (Text.pack . show) path)],
+        PD.Span ("", ["toc-item"], []) [PD.Str title]
       ]
     where
       ts =
         Text.intercalate "." $
-          Text.singleton (['A' ..] List.!! (x -1)) : map (Text.pack . show) xs
+          Text.singleton (['A' ..] List.!! (x - 1)) : map (Text.pack . show) xs
 
 renderTitle :: Text -> PD.Inline
 renderTitle blkId = PD.Span ("", ["title"], []) [PD.Str blkId]

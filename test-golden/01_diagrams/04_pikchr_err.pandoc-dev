@@ -6,7 +6,12 @@ Pandoc
           ]
     }
   [ Header
-      1 ( "pikchr" , [] , [] ) [ Str "1" , Space , Str "PikChr" ]
+      1
+      ( "pikchr" , [] , [] )
+      [ Span ( "" , [ "section-no" ] , [] ) [ Str "1" ]
+      , Space
+      , Str "PikChr"
+      ]
   , Para
       [ Str "We"
       , Space

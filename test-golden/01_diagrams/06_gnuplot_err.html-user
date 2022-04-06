@@ -1,8 +1,8 @@
 <html><head><title>Gnuplot error</title></head>
 <body>
-<h1 id="gnuplot">1 Gnuplot</h1>
+<h1 id="gnuplot"><span class="section-no">1</span> Gnuplot</h1>
 <p>We try out the Gnuplot integration when things go wrong…</p>
-<h2 id="an-invalid-script-given-to-gnuplot">1.1 An invalid script given to gnuplot</h2>
+<h2 id="an-invalid-script-given-to-gnuplot"><span class="section-no">1.1</span> An invalid script given to gnuplot</h2>
 <div>
 <pre class="gnuplot" table="foo"><code>set xtic 1
 plott $foo using 1:2 with lines title &quot;foo&quot;</code></pre>
@@ -13,7 +13,7 @@ gnuplot&gt; plott $foo using 1:2 with lines title &quot;foo&quot;
 
 </code></pre>
 </div>
-<h2 id="an-invalid-data-table-reference-and-the-table-itself-fails-to-parse.">1.2 An invalid data table reference, and the table itself fails to parse.</h2>
+<h2 id="an-invalid-data-table-reference-and-the-table-itself-fails-to-parse."><span class="section-no">1.2</span> An invalid data table reference, and the table itself fails to parse.</h2>
 <div class="gnuplot" table="broken">
 <pre><code>set xtic 1
 plott $broken using 1:2 with lines title &quot;broken&quot;</code></pre>

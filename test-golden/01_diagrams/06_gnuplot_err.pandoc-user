@@ -6,7 +6,12 @@ Pandoc
           ]
     }
   [ Header
-      1 ( "gnuplot" , [] , [] ) [ Str "1" , Space , Str "Gnuplot" ]
+      1
+      ( "gnuplot" , [] , [] )
+      [ Span ( "" , [ "section-no" ] , [] ) [ Str "1" ]
+      , Space
+      , Str "Gnuplot"
+      ]
   , Para
       [ Str "We"
       , Space
@@ -31,7 +36,7 @@ Pandoc
   , Header
       2
       ( "an-invalid-script-given-to-gnuplot" , [] , [] )
-      [ Str "1.1"
+      [ Span ( "" , [ "section-no" ] , [] ) [ Str "1.1" ]
       , Space
       , Str "An"
       , Space
@@ -61,7 +66,7 @@ Pandoc
       , []
       , []
       )
-      [ Str "1.2"
+      [ Span ( "" , [ "section-no" ] , [] ) [ Str "1.2" ]
       , Space
       , Str "An"
       , Space

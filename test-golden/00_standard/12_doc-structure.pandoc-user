@@ -16,7 +16,9 @@ Pandoc
                     ( "" , [] , [] )
                     [ Span
                         ( "" , [ "section" ] , [ ( "toc-level" , "1" ) ] )
-                        [ Str "1" , Space , Str "Foo" ]
+                        [ Span ( "" , [ "toc-number" ] , [] ) [ Str "1" ]
+                        , Span ( "" , [ "toc-item" ] , [] ) [ Str "Foo" ]
+                        ]
                     ]
                     ( "#foo" , "" )
                 ]
@@ -26,7 +28,9 @@ Pandoc
                     ( "" , [] , [] )
                     [ Span
                         ( "" , [ "section" ] , [ ( "toc-level" , "2" ) ] )
-                        [ Str "1.1" , Space , Str "Foo the First" ]
+                        [ Span ( "" , [ "toc-number" ] , [] ) [ Str "1.1" ]
+                        , Span ( "" , [ "toc-item" ] , [] ) [ Str "Foo the First" ]
+                        ]
                     ]
                     ( "#foo-the-first" , "" )
                 ]
@@ -36,7 +40,9 @@ Pandoc
                     ( "" , [] , [] )
                     [ Span
                         ( "" , [ "section" ] , [ ( "toc-level" , "2" ) ] )
-                        [ Str "1.2" , Space , Str "Foo the Second" ]
+                        [ Span ( "" , [ "toc-number" ] , [] ) [ Str "1.2" ]
+                        , Span ( "" , [ "toc-item" ] , [] ) [ Str "Foo the Second" ]
+                        ]
                     ]
                     ( "#foo-the-second" , "" )
                 ]
@@ -46,7 +52,9 @@ Pandoc
                     ( "" , [] , [] )
                     [ Span
                         ( "" , [ "section" ] , [ ( "toc-level" , "1" ) ] )
-                        [ Str "2" , Space , Str "Bar" ]
+                        [ Span ( "" , [ "toc-number" ] , [] ) [ Str "2" ]
+                        , Span ( "" , [ "toc-item" ] , [] ) [ Str "Bar" ]
+                        ]
                     ]
                     ( "#bar" , "" )
                 ]
@@ -56,14 +64,22 @@ Pandoc
                     ( "" , [] , [] )
                     [ Span
                         ( "" , [ "section" ] , [ ( "toc-level" , "2" ) ] )
-                        [ Str "2.1" , Space , Str "Introduction to Bar" ]
+                        [ Span ( "" , [ "toc-number" ] , [] ) [ Str "2.1" ]
+                        , Span ( "" , [ "toc-item" ] , [] ) [ Str "Introduction to Bar" ]
+                        ]
                     ]
                     ( "#introduction-to-bar" , "" )
                 ]
             ]
           ]
       ]
-  , Header 1 ( "foo" , [] , [] ) [ Str "1" , Space , Str "Foo" ]
+  , Header
+      1
+      ( "foo" , [] , [] )
+      [ Span ( "" , [ "section-no" ] , [] ) [ Str "1" ]
+      , Space
+      , Str "Foo"
+      ]
   , Para
       [ Str "This"
       , Space
@@ -78,7 +94,7 @@ Pandoc
   , Header
       2
       ( "foo-the-first" , [] , [] )
-      [ Str "1.1"
+      [ Span ( "" , [ "section-no" ] , [] ) [ Str "1.1" ]
       , Space
       , Str "Foo"
       , Space
@@ -106,7 +122,7 @@ Pandoc
   , Header
       2
       ( "foo-the-second" , [] , [] )
-      [ Str "1.2"
+      [ Span ( "" , [ "section-no" ] , [] ) [ Str "1.2" ]
       , Space
       , Str "Foo"
       , Space
@@ -131,7 +147,13 @@ Pandoc
       , Space
       , Str "Foo."
       ]
-  , Header 1 ( "bar" , [] , [] ) [ Str "2" , Space , Str "Bar" ]
+  , Header
+      1
+      ( "bar" , [] , [] )
+      [ Span ( "" , [ "section-no" ] , [] ) [ Str "2" ]
+      , Space
+      , Str "Bar"
+      ]
   , Para
       [ Str "Bar"
       , Space
@@ -157,7 +179,7 @@ Pandoc
   , Header
       2
       ( "introduction-to-bar" , [] , [] )
-      [ Str "2.1"
+      [ Span ( "" , [ "section-no" ] , [] ) [ Str "2.1" ]
       , Space
       , Str "Introduction"
       , Space
@@ -171,7 +193,7 @@ Pandoc
       , []
       , []
       )
-      [ Str "2.1.1"
+      [ Span ( "" , [ "section-no" ] , [] ) [ Str "2.1.1" ]
       , Space
       , Str "The"
       , Space

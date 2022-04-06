@@ -8,7 +8,12 @@ Pandoc
           ]
     }
   [ Header
-      1 ( "graphviz" , [] , [] ) [ Str "1" , Space , Str "GraphViz" ]
+      1
+      ( "graphviz" , [] , [] )
+      [ Span ( "" , [ "section-no" ] , [] ) [ Str "1" ]
+      , Space
+      , Str "GraphViz"
+      ]
   , Para
       [ Str "We"
       , Space

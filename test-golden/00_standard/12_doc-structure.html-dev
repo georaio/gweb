@@ -2,20 +2,20 @@
 <body>
 <div id="table-of-contents">
 <ul>
-<li><a href="#foo"><span class="section" toc-level="1">1 Foo</span></a></li>
-<li><a href="#foo-the-first"><span class="section" toc-level="2">1.1 Foo the First</span></a></li>
-<li><a href="#foo-the-second"><span class="section" toc-level="2">1.2 Foo the Second</span></a></li>
-<li><a href="#bar"><span class="section" toc-level="1">2 Bar</span></a></li>
-<li><a href="#introduction-to-bar"><span class="section" toc-level="2">2.1 Introduction to Bar</span></a></li>
+<li><a href="#foo"><span class="section" toc-level="1"><span class="toc-number">1</span><span class="toc-item">Foo</span></span></a></li>
+<li><a href="#foo-the-first"><span class="section" toc-level="2"><span class="toc-number">1.1</span><span class="toc-item">Foo the First</span></span></a></li>
+<li><a href="#foo-the-second"><span class="section" toc-level="2"><span class="toc-number">1.2</span><span class="toc-item">Foo the Second</span></span></a></li>
+<li><a href="#bar"><span class="section" toc-level="1"><span class="toc-number">2</span><span class="toc-item">Bar</span></span></a></li>
+<li><a href="#introduction-to-bar"><span class="section" toc-level="2"><span class="toc-number">2.1</span><span class="toc-item">Introduction to Bar</span></span></a></li>
 </ul>
 </div>
-<h1 id="foo">1 Foo</h1>
+<h1 id="foo"><span class="section-no">1</span> Foo</h1>
 <p>This is the Foo chapter.</p>
-<h2 id="foo-the-first">1.1 Foo the First</h2>
+<h2 id="foo-the-first"><span class="section-no">1.1</span> Foo the First</h2>
 <p>We discuss the first main aspect of Foo.</p>
-<h2 id="foo-the-second">1.2 Foo the Second</h2>
+<h2 id="foo-the-second"><span class="section-no">1.2</span> Foo the Second</h2>
 <p>We discuss the second main aspect of Foo.</p>
-<h1 id="bar">2 Bar</h1>
+<h1 id="bar"><span class="section-no">2</span> Bar</h1>
 <p>Bar is a deep field and covers many related topics.</p>
 <div class="review-remark" reviewer="bens">
 <div class="reviewer">
@@ -23,8 +23,8 @@
 </div>
 <p>Some extra remarks on the current state of the document.</p>
 </div>
-<h2 id="introduction-to-bar">2.1 Introduction to Bar</h2>
-<h3 id="the-thermodynamics-of-glass-blowing-in-awkward-situations">2.1.1 The Thermodynamics of Glass Blowing in Awkward Situations</h3>
+<h2 id="introduction-to-bar"><span class="section-no">2.1</span> Introduction to Bar</h2>
+<h3 id="the-thermodynamics-of-glass-blowing-in-awkward-situations"><span class="section-no">2.1.1</span> The Thermodynamics of Glass Blowing in Awkward Situations</h3>
 <div class="dev-only">
 <p>This is for developers only.</p>
 </div>

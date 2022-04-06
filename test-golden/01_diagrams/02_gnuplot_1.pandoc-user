@@ -3,7 +3,12 @@ Pandoc
     { unMeta = fromList [ ( "title" , MetaInlines [ Str "Gnuplot" ] ) ]
     }
   [ Header
-      1 ( "gnuplot" , [] , [] ) [ Str "1" , Space , Str "Gnuplot" ]
+      1
+      ( "gnuplot" , [] , [] )
+      [ Span ( "" , [ "section-no" ] , [] ) [ Str "1" ]
+      , Space
+      , Str "Gnuplot"
+      ]
   , Para
       [ Str "We"
       , Space
