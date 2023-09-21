@@ -1,0 +1,8 @@
+packages: .
+
+allow-newer:
+    hslua,
+    hslua-aeson,
+    hslua-marshalling,
+    lens,
+    selective
